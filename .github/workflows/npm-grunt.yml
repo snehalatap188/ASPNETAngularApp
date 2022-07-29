@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
-        path: ClientApp
+        path: ASPNETAngularApp/ClientApp
 
 
     - name: npm install, build, and test
