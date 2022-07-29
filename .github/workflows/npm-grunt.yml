@@ -23,9 +23,9 @@ jobs:
       uses: actions/setup-node@v3
      
       with:
+        path: ASPNETAngularApp/ClientApp
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
-        path: ASPNETAngularApp/ClientApp
         
 
     - name: npm install, build, and test
