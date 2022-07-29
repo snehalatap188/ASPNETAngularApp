@@ -21,12 +21,13 @@ jobs:
       uses: actions/setup-node@v3
 
       with:
-        working-directory: ASPNETAngularApp/ASPNETAngularApp/ClientApp
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
         
 
     - name: npm install, build, and test
+        working-directory:ASPNETAngularApp/ASPNETAngularApp/ClientApp
+     
       run: |
         npm install
         npm run build --if-present
