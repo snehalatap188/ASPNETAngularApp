@@ -13,11 +13,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ASPNETAngularApp/ClientApp
-     
+    runs-on: ubuntu-latest  
 
     steps:
      
@@ -29,6 +25,7 @@ jobs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
+        path: ASPNETAngularApp/ClientApp
         
 
     - name: npm install, build, and test
