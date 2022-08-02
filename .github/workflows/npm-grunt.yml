@@ -45,13 +45,10 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
       
-      - name: Set up dependency caching for faster builds
-        uses: actions/cache@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.4.1
         with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget-
+          node-version: 12.x
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
